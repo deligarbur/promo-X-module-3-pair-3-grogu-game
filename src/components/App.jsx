@@ -1,23 +1,13 @@
 import "../styles/App.scss";
+import Board from "./Board";
+import Header from "./Header";
 
 function App() {
   return (
     <>
-      <header>
-        <h1>¡Cuidado con Grogu!</h1>
-      </header>
+      <Header />
       <main className="page">
-        <section className="board">
-          <div className="cell">
-            <div className="grogu">👣</div>
-          </div>
-          <div className="cell"></div>
-          <div className="cell"></div>
-          <div className="cell"></div>
-          <div className="cell"></div>
-          <div className="cell"></div>
-          <div className="cell"></div>
-        </section>
+        <Board />
 
         <section>
           <button className="dice">Lanzar Dado</button>
