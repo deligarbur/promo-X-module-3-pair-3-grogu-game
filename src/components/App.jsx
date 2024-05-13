@@ -1,13 +1,35 @@
+import { useState } from "react";
 import "../styles/App.scss";
 import Board from "./Board";
 import Header from "./Header";
 
-function App() {
+
+function App () {
+  const [rollDice, setRollDice] = useState(null);
+  const [cookies, setCookies] = useState(["🍪", "🍪", "🍪"]);
+  const [eggs, setEggs] = useState(["🥚", "🥚", "🥚"]);
+  const [frog, setFrog] = useState(["🐸", "🐸", "🐸"]);
+  const [groguPosition, setGroguPosition] = useState(0);
+  const [gameStatus, setGameStatus] = useState("en curso");
+
+  function getRandomNumber (max) {
+    return Math.ceil(Math.random() * max);
+  }
+
+  const numberRandom = getRandomNumber(4);
+
+  const numberDice = () => {
+    setRollDice(getRandomNumber(numberRandom));
+    console.log(numberRandom);
+  };
+
+
   return (
     <>
       <Header />
       <main className="page">
         <Board />
+
 
         <section>
           <button className="dice">Lanzar Dado</button>
